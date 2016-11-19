@@ -1,0 +1,19 @@
+{  
+   "headers":[  
+      "name",
+      "lastname",
+      "age"
+   ],
+   "data":[  
+      {  
+         "name":"Asheesh",
+         "lastname":"Rana",
+         "age":"36"
+      },
+      {  
+         "name":"Kavita",
+         "lastname":"Rana",
+         "age":"31"
+      },
+   ]
+}

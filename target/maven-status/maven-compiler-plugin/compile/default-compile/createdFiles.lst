@@ -1,0 +1,4 @@
+org/ash/is/config/InfoServerConfig.class
+org/ash/is/Application.class
+org/ash/is/controllers/InfoServerController.class
+org/ash/is/config/Initializer.class
