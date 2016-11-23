@@ -20,7 +20,14 @@ public class InfoServerController {
     
     @RequestMapping("/info/{info}")
     public ModelAndView getInfo(@PathVariable String info) {
-        System.out.println("Input = " + info);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("info");
+        return mv;
+    }
+    
+    @RequestMapping("/data/{info}")
+    public String getData(@PathVariable String info) {
+                System.out.println("Input = " + info);
         Resource resource = new ClassPathResource(info + ".json");
         String response = "Not found";
         if (resource.exists()) {
@@ -33,10 +40,7 @@ public class InfoServerController {
             }
             
         }
-        System.out.println("resposne = " + response);
-        
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("info");
-        return mv;
+        return response;
+
     }
 }
