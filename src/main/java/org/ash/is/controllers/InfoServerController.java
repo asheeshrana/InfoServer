@@ -24,6 +24,13 @@ public class InfoServerController {
         mv.setViewName("info");
         return mv;
     }
+
+    @RequestMapping("/info/getFilesNames")
+    public ModelAndView getInfo() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("info");
+        return mv;
+    }
     
     @RequestMapping("/data/{info}")
     public String getData(@PathVariable String info) {
