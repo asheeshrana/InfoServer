@@ -13,9 +13,13 @@ var port = "<%=request.getServerPort() %>";
 
 </head>
 <body>
-    <p>This is spartaaaaaaaaa......</p>
-    <table ng-controller="InfoController as infoCtrl">
-        <th >
-        </th>
-    </table>
+    <div ng-controller="InfoController as infoCtrl">
+        <select ng-model="selectedFileName" ng-options="fileName for fileName in fileList" ng-change="infoCtrl.update()""></select>
+        <table border="1">
+            <th ng-repeat="header in info.headers">{{header}}</th>
+            <tr ng-repeat="row in info.data">
+                <td ng-repeat="key in info.headers">{{row[key]}}</td>
+            </tr>
+        </table>
+    </div>
 </body>
