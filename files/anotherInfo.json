@@ -1,0 +1,28 @@
+{
+   "headers":[
+      "Movie Name",
+      "Watched",
+      "Motivation To Watch out of 5",
+      "Plan to avoid watching",
+   ],
+   "data":[ 
+      {
+      "Movie Name":"Wonder woman",
+      "Watched":"No",
+      "Motivation To Watch out of 5":"1",
+      "Plan to avoid watching":"Meeting with Big boys at work",
+      },
+      {
+      "Movie Name":"3 Idiots",
+      "Watched":"Yes",
+      "Motivation To Watch out of 5":"5",
+      "Plan to avoid watching":"No",
+      },
+      {
+      "Movie Name":"Tomato and Potato",
+      "Watched":"No",
+      "Motivation To Watch out of 5":"100",
+      "Plan to avoid watching":"No",
+      },
+   ]
+}
