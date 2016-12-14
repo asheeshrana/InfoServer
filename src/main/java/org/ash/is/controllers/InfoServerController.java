@@ -2,6 +2,8 @@ package org.ash.is.controllers;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RestController;
 import java.io.File;
 import java.io.BufferedReader;
@@ -15,9 +17,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 @RequestMapping("/is")
+@PropertySource(value = "is.properties")
 public class InfoServerController {
 
-    private static final String DATA_DIR = "/projects/InfoServer/files";
+    @Value("${org.ash.is.dataDir}")
+    private String dataDir;
 
     @RequestMapping("/info")
     public ModelAndView getInfo() {
@@ -34,7 +38,7 @@ public class InfoServerController {
         String response = "Not found";
         try {
             JSONParser parser = new JSONParser();
-            JSONObject jsonResource = (JSONObject)(parser.parse(new BufferedReader(new FileReader(new File(DATA_DIR + File.separator + info + ".json")))));
+            JSONObject jsonResource = (JSONObject)(parser.parse(new BufferedReader(new FileReader(new File(dataDir + File.separator + info + ".json")))));
             response = jsonResource.toString();
         } catch (Exception e) {
                 //Ignore
@@ -46,7 +50,7 @@ public class InfoServerController {
     @RequestMapping("/getFileList")
     public String getFileList() {
 
-        File file = new File(DATA_DIR);
+        File file = new File(dataDir);
         JSONArray fileList = new JSONArray();
         
         for (String fileName : file.list()) {
